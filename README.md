@@ -12,16 +12,17 @@ Create a client:
 
 ```ruby
 require "mws-feeds"
-client = MWS.feeds(marketplace: "ATVPDKIKX0DER",
-                    merchant_id: "123")
+client = MWS.feeds(marketplace: "ATVPDKIKX0DER", merchant_id: "123")
 ```
 
-Set up credentials [when instantiating or with environment variables](https://github.com/Flowspace-Team/peddler#usage).
+Set up credentials [when instantiating or with environment variables](https://github.com/hakanensari/peddler#usage).
 
-### Service Status
+### Feed Submission Count
 
-Check the operational status of the API:
+Get the count of feeds submitted in the past 90 days:
 
 ```ruby
-client.get_service_status.parse
+response = client.get_feed_submission_count
+submission_count_data = response.parse
+puts submission_count_data.count # => 1
 ```

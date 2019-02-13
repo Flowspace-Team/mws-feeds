@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Flowspace-Team/mws-feeds.svg?branch=master)](https://travis-ci.org/Flowspace-Team/mws-feeds)
+[![Gem Version](https://badge.fury.io/rb/mws-feeds.svg)](https://badge.fury.io/rb/mws-feeds)
 
 # MWS Feeds
 

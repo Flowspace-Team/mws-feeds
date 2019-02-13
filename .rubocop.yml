@@ -1,0 +1,78 @@
+#
+# For more information see https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+#
+# However, do not include entire blocks here just because you want to change them.
+# Include only the specific lines that you're changing from the defaults.
+#
+---
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'Gemfile.lock'
+    - 'tmp/**/*'
+    - '*.gemspec'
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  StyleGuideCopsOnly: false
+
+Bundler/OrderedGems:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+  - 'Guardfile'
+  - 'spec/**/*.rb'
+Naming/FileName:
+  Exclude:
+  - 'lib/mws-merchant_fulfillment.rb'
+Style/BracesAroundHashParameters:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+  - 'Gemfile'
+  - 'Guardfile'
+  - 'Rakefile'
+  - 'bin/*'
+Style/ClassCheck:
+  Enabled: false
+Style/RegexpLiteral:
+  Exclude:
+  - 'Guardfile'
+Style/SymbolArray:
+  MinSize: 3
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/IndentHash:
+  EnforcedStyle: consistent
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/IndentArray:
+  EnforcedStyle: consistent
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+  - 'spec/**.rb'
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  Exclude:
+  - 'spec/factories/**/*.rb'
+  - 'spec/**/*.rb'
+Style/Lambda:
+  EnforcedStyle: literal
+Style/Semicolon:
+  Exclude:
+  - 'spec/*_spec.rb'
+Style/StringLiterals:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma

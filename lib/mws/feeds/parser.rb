@@ -4,6 +4,7 @@ require 'peddler'
 require 'nokogiri'
 require 'mws/feeds/feed_submission_count'
 require 'mws/feeds/feed_submission_info'
+require 'mws/feeds/feed_submission_list'
 
 module MWS
   module Feeds
@@ -22,6 +23,8 @@ module MWS
           FeedSubmissionCount.new(node)
         when /SubmitFeedResult/
           FeedSubmissionInfo.new(node.at('FeedSubmissionInfo'))
+        when /GetFeedSubmissionListResult/
+          FeedSubmissionList.new(node)
         else
           raise NotImplementedError, node.name
         end

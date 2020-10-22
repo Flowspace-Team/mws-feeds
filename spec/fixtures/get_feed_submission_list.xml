@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<GetFeedSubmissionListResponse xmlns="http://mws.amazonaws.com/doc/2009-01-01/">
+  <GetFeedSubmissionListResult>
+    <HasNext>false</HasNext>
+    <FeedSubmissionInfo>
+      <FeedProcessingStatus>_DONE_</FeedProcessingStatus>
+      <FeedType>_POST_INVENTORY_AVAILABILITY_DATA_</FeedType>
+      <FeedSubmissionId>166916018557</FeedSubmissionId>
+      <StartedProcessingDate>2020-10-22T17:34:39+00:00</StartedProcessingDate>
+      <SubmittedDate>2020-10-22T17:34:33+00:00</SubmittedDate>
+      <CompletedProcessingDate>2020-10-22T17:35:47+00:00</CompletedProcessingDate>
+    </FeedSubmissionInfo>
+    <FeedSubmissionInfo>
+      <FeedProcessingStatus>_DONE_</FeedProcessingStatus>
+      <FeedType>_POST_INVENTORY_AVAILABILITY_DATA_</FeedType>
+      <FeedSubmissionId>166914018557</FeedSubmissionId>
+      <StartedProcessingDate>2020-10-22T17:22:54+00:00</StartedProcessingDate>
+      <SubmittedDate>2020-10-22T17:22:49+00:00</SubmittedDate>
+      <CompletedProcessingDate>2020-10-22T17:24:06+00:00</CompletedProcessingDate>
+    </FeedSubmissionInfo>
+  </GetFeedSubmissionListResult>
+  <ResponseMetadata>
+    <RequestId>0bcbb6ce-8e94-4b82-9ff0-3cb1f099e3fd</RequestId>
+  </ResponseMetadata>
+</GetFeedSubmissionListResponse>

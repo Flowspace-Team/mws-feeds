@@ -5,6 +5,7 @@ require 'nokogiri'
 require 'mws/feeds/feed_submission_count'
 require 'mws/feeds/feed_submission_info'
 require 'mws/feeds/feed_submission_list'
+require 'mws/feeds/feed_submission_result'
 
 module MWS
   module Feeds
@@ -16,7 +17,7 @@ module MWS
       end
 
       def parse
-        node = find_result_node
+        node = find_payload
 
         case node.name
         when /GetFeedSubmissionCount/
@@ -25,6 +26,8 @@ module MWS
           FeedSubmissionInfo.new(node.at('FeedSubmissionInfo'))
         when /GetFeedSubmissionListResult/
           FeedSubmissionList.new(node)
+        when 'ProcessingReport'
+          FeedSubmissionResult.new(node, namespace: nil)
         else
           raise NotImplementedError, node.name
         end
@@ -44,11 +47,18 @@ module MWS
 
       private
 
-      def find_result_node
+      def find_payload
         xml = Nokogiri(@response.body)
-        root = xml.children.first
+        find_result_node(xml) || find_processing_report_node(xml)
+      end
 
+      def find_result_node(xml)
+        root = xml.children.first
         root.children.find { |node| node.name.include?('Result') }
+      end
+
+      def find_processing_report_node(xml)
+        xml.xpath('//ProcessingReport').first
       end
     end
 

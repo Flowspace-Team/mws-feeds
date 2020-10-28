@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+  <Header>
+    <DocumentVersion>1.02</DocumentVersion>
+    <MerchantIdentifier>12345678901</MerchantIdentifier>
+  </Header>
+  <MessageType>ProcessingReport</MessageType>
+  <Message>
+    <MessageID>1</MessageID>
+    <ProcessingReport>
+      <DocumentTransactionID>166900000000</DocumentTransactionID>
+      <StatusCode>Complete</StatusCode>
+      <ProcessingSummary>
+        <MessagesProcessed>1</MessagesProcessed>
+        <MessagesSuccessful>0</MessagesSuccessful>
+        <MessagesWithError>1</MessagesWithError>
+        <MessagesWithWarning>0</MessagesWithWarning>
+      </ProcessingSummary>
+      <Result>
+        <MessageID>1</MessageID>
+        <ResultCode>Error</ResultCode>
+        <ResultMessageCode>18028</ResultMessageCode>
+        <ResultDescription>Your order cannot be found using Merchant ID 12345678901 and Merchant Order 112-1111111-1111111. Enter the correct order ID and then resubmit your feed.</ResultDescription>
+      </Result>
+    </ProcessingReport>
+  </Message>
+</AmazonEnvelope>

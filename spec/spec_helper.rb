@@ -6,11 +6,13 @@ require "bundler/setup"
 require "mws-feeds"
 
 module FixtureHelpers
-  def load_xml_fixture(type)
+  def load_fixture(type)
     file = File.expand_path("../fixtures/#{type}.xml", __FILE__)
-    body = File.read(file)
+    File.read(file)
+  end
 
-    Nokogiri(body)
+  def load_xml_fixture(type)
+    Nokogiri(load_fixture(type))
   end
 end
 

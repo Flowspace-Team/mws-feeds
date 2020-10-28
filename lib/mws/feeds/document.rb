@@ -4,9 +4,11 @@ module MWS
   module Feeds
     class Document
       attr_reader :node
+      attr_reader :namespace
 
-      def initialize(node)
+      def initialize(node, namespace: 'xmlns')
         @node = node
+        @namespace = namespace
       end
 
       def xpath(path)
@@ -16,6 +18,8 @@ module MWS
       private
 
       def add_namespace(path)
+        return path if namespace.nil?
+
         path.
           split('/').
           map { |attr| "xmlns:#{attr}" }.

@@ -13,6 +13,7 @@ RSpec.describe MWS::Feeds::FeedSubmissionResult do
   subject { instance }
 
   it { is_expected.to be_a(MWS::Feeds::FeedSubmissionResult) }
+  it { is_expected.to have_attributes(document_transaction_id: 166900000000, status_code: 'Complete') }
 
   describe "#processing_summary" do
     subject { instance.processing_summary }
